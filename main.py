@@ -48,7 +48,7 @@ def main():
     prev_gesture = GESTURE_UNKNOWN
     progress = 0.0
     
-    print("\n--- Hand-Gesture Virtual Paint Application Running ---")
+    print("\n--- handSketch Application Running ---")
     print("Keyboard Controls:")
     print("  'q' - Quit the application")
     print("  'c' - Clear the canvas drawing layer")
@@ -237,7 +237,7 @@ def main():
                 print(f"[Keyboard] Canvas saved: {filepath}")
 
         # Show Output Frame
-        cv2.imshow("Hand-Gesture Virtual Paint", output_frame)
+        cv2.imshow("handSketch", output_frame)
 
     # Release resources
     cap.release()

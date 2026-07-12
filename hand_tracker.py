@@ -1,6 +1,7 @@
 import cv2
 import os
 import urllib.request
+import sys
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 import mediapipe as mp
@@ -19,7 +20,14 @@ class HandTracker:
         :param detection_confidence: Minimum confidence value for hand detection.
         :param tracking_confidence: Minimum confidence value for hand tracking.
         """
-        self.model_path = "hand_landmarker.task"
+        # Resolve the model path to support both source run and packaged executable (.exe)
+        if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+            # Running inside PyInstaller standalone executable wrapper
+            self.model_path = os.path.join(sys._MEIPASS, "hand_landmarker.task")
+        else:
+            # Running from standard python source
+            self.model_path = "hand_landmarker.task"
+
         self._ensure_model_exists()
 
         # Configure and initialize the hand landmarker detector
@@ -37,6 +45,12 @@ class HandTracker:
     def _ensure_model_exists(self):
         """Checks if the hand landmarker task file is present locally, downloading it if necessary."""
         if not os.path.exists(self.model_path):
+            # Fallback path if running as EXE but the asset extraction failed inside temp directory
+            if getattr(sys, 'frozen', False):
+                self.model_path = os.path.join(os.path.dirname(sys.executable), "hand_landmarker.task")
+                if os.path.exists(self.model_path):
+                    return
+
             print(f"[HandTracker] Model '{self.model_path}' not found locally.")
             print("[HandTracker] Downloading hand_landmarker.task from Google APIs...")
             url = "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task"

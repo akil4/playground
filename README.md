@@ -1,30 +1,47 @@
-# Hand-Gesture Virtual Paint Desktop App
+# handSketch
 
-This is a real-time Python desktop application that turns your webcam into a virtual drawing canvas controlled entirely by hand movements. Using OpenCV, MediaPipe, and NumPy, it maps specific finger postures to actions like selecting colors, drawing shapes, and saving compositions.
+This is a real-time Python desktop application that turns your webcam into a virtual drawing canvas controlled entirely by hand movements. Using OpenCV, MediaPipe, and NumPy, it maps specific finger postures to actions like selecting colors, drawing shapes, and saving drawings.
 
 ---
 
-## Installation & Setup
+## Running the Application
 
-### Prerequisites
-- Python 3.8 or higher.
-- A standard laptop or external USB webcam.
+### Option 1: Standalone Windows 11 Executable (Pre-compiled - Fastest)
+We have packaged the entire application (including dependencies and the model file) into a standalone Windows executable.
+- Run it directly from: **[dist/handSketch.exe](file:///C:/Users/win11/Desktop/project/handSketch/dist/handSketch.exe)**
+- This executable runs 100% offline, requires no Python environment installation, and launches instantly in GUI mode.
 
-### Installation Steps
+### Option 2: Double-Click Launcher (Windows Batch File)
+You can launch the app via python by double-clicking: **[handSketch.bat](file:///C:/Users/win11/Desktop/project/handSketch/handSketch.bat)**
+- It automatically verifies Python is installed.
+- It checks and installs any missing packages from `requirements.txt` on the first run.
+- It launches the app in GUI mode (suppressing the command prompt console).
+
+### Option 3: Running from the Terminal
 1. Navigate to the project directory:
    ```bash
-   cd c:/Users/win11/Desktop/project/hand_Sketch
+   cd C:/Users/win11/Desktop/project/handSketch
    ```
-
-2. Install the required dependencies:
+2. Install the dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-
-3. Run the application:
+3. Run the app:
    ```bash
    python main.py
    ```
+
+### (Advanced) Packaging the Executable Yourself
+If you make changes to the source code and want to compile a new `.exe` yourself:
+1. Install PyInstaller:
+   ```bash
+   pip install pyinstaller
+   ```
+2. Re-compile the project:
+   ```bash
+   pyinstaller --noconsole --onefile --add-data "hand_landmarker.task;." --collect-all mediapipe --name handSketch main.py
+   ```
+3. Once completed, your newly compiled executable will be located in the `dist/` folder.
 
 ---
 
@@ -57,12 +74,12 @@ This is a real-time Python desktop application that turns your webcam into a vir
 ## Troubleshooting Tips
 
 ### 1. Jittery Cursor / Tracking Loss
-- **Lighting**: Ensure your face and hands are well-lit. Avoid bright, direct backlighting (like pointing the webcam at a bright window), which silhouettes the hand.
+- **Lighting**: Ensure your face and hands are well-lit. Avoid bright, direct backlighting (like pointing the webcam at a window), which silhouettes the hand.
 - **Background Interference**: Highly cluttered backgrounds or skin-toned objects behind you might confuse landmark detection. Use a neutral background if possible.
 - **Camera Angle**: Keep your palm facing directly towards the camera. If your hand is at an extreme profile angle, MediaPipe may lose track of your fingers.
 
 ### 2. Dwell Click Triggers Too Quickly or Too Slowly
-- You can adjust the click sensitivity by editing the `self.dwell_threshold` parameter in [ui_manager.py](file:///c:/Users/win11/Desktop/project/hand_Sketch/ui_manager.py). Lower values speed up clicks, while higher values require holding the cursor still for longer.
+- You can adjust the click sensitivity by editing the `self.dwell_threshold` parameter in [ui_manager.py](file:///C:/Users/win11/Desktop/project/handSketch/ui_manager.py). Lower values speed up clicks, while higher values require holding the cursor still for longer.
 
 ---
 
