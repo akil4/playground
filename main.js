@@ -28,10 +28,42 @@
 let humanScore = 0;
 let computerScore = 0;
 
-for (let i = 0; i < 5; i++)
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+
+const resultDiv = document.querySelector(".result");
+
+rockBtn.addEventListener("click", () => playRound("rock", getComputerChoice()));
+paperBtn.addEventListener("click", () => playRound("paper", getComputerChoice()));
+scissorsBtn.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+
+function updateScore()
 {
-    playRound(getHumanChoice(), getComputerChoice());
+    resultDiv.textContent = `Human Score: ${humanScore} | Computer Score: ${computerScore}`;
+    
+    if (humanScore === 5)
+    {
+        resultDiv.textContent = `HUMAN WINS!`;
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+        return;
+    }
+    if (computerScore === 5)
+    {
+        resultDiv.textContent = `COMPUTER WINS!`;
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+        return;
+    }
 }
+
+// for (let i = 0; i < 5; i++)
+// {
+//     playRound(getHumanChoice(), getComputerChoice());
+// }
 
 console.log("\n\n\n", humanScore>computerScore?"You Win!":humanScore===computerScore?"Draw, try again!":"You Lose!");
 /* console.log("Human Score: ", humanScore);
@@ -95,4 +127,6 @@ function playRound(humanChoice, computerChoice)
         console.log("Draw!");
         return;
     }
+
+    updateScore();
 }
