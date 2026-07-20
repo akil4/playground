@@ -21,6 +21,8 @@
     width: 6.25%;
 }
 
-/* .child:hover {
-    background-color: red;
-} */
+.resetBtn {
+    width: 25%;
+    margin: 1rem 0 0 1rem;
+    padding: 1em;
+}
