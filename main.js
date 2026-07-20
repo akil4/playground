@@ -14,7 +14,11 @@ resetBtn.addEventListener("click", () => {
             container.appendChild(div);
 
             div.addEventListener("mouseenter", () => {
-                div.style.backgroundColor = "red";
+                function random() 
+                {
+                    return Math.floor(Math.random() * 256);
+                }
+                div.style.backgroundColor = `rgb(${random()}, ${random()}, ${random()})`;
             })
         }
     }
