@@ -1,0 +1,47 @@
+:root {
+    --primary-color-red: hsl(0, 78%, 62%);
+    --primary-color-cyan: hsl(180, 62%, 55%);
+    --primary-color-orange: hsl(34, 97%, 64%);
+    --primary-color-blue: hsl(212, 86%, 64%);
+    --neutral-color-grey500: hsl(234, 12%, 34%);
+    --neutral-color-grey400: hsl(212, 6%, 44%);
+    --neutral-color-white: hsl(0, 0%, 100%);
+    --body-font-size: 15px;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src:
+        local("Poppins"),
+        url("./fonts/Poppins-Light.ttf") format("truetype"); 
+        font-weight: 200;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src:
+        local("Poppins"),
+        url("./fonts/Poppins-Regular.ttf") format("truetype"); 
+        font-weight: 400;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src:
+        local("Poppins"),
+        url("./fonts/Poppins-Bold.ttf") format("truetype"); 
+        font-weight: 600;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.attribution { font-size: 0.6875rem; text-align: center; }
+    
+.attribution a { color: hsl(228, 45%, 44%); }
