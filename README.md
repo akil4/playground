@@ -1,8 +1,15 @@
 # handSketch
 
-This is a real-time Python desktop application that turns your webcam into a virtual drawing canvas controlled entirely by hand movements. Using OpenCV, MediaPipe, and NumPy, it maps specific finger postures to actions like selecting colors, drawing shapes, and saving drawings.
+This is a real-time application that turns your webcam into a virtual drawing canvas controlled entirely by hand movements. Using MediaPipe, it maps specific finger postures to actions like selecting colors, drawing shapes, and saving drawings.
+
+## 🚀 Play Now: Web Version (Recommended)
+We have ported handSketch to a **Native Web Application**! It runs entirely in your browser using WebAssembly and WebGL for zero-latency AI hand tracking.
+- **[Try the Live Web App Here!](https://akil4.github.io/handSketch/)**
+- *No installation required, completely free, and works on any modern browser.*
 
 ---
+
+## Running the Desktop Python Application
 
 ## Running the Application
 
