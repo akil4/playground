@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cyber-darker text-cyber-text font-sans antialiased m-0 p-0 overflow-hidden h-screen w-screen selection:bg-cyber-accent selection:text-white;
+  }
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-cyber-border rounded-full border-[2px] border-cyber-darker bg-clip-padding;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* PrismJS dark mode basic overrides */
+code[class*="language-"],
+pre[class*="language-"] {
+  @apply font-mono text-[13px] leading-relaxed;
+}
