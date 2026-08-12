@@ -91,6 +91,8 @@ export default function CommitGraph({ commits }) {
         nodeRelSize={4}
         linkColor={() => 'rgba(255, 255, 255, 0.15)'}
         linkWidth={1.5}
+        linkDirectionalArrowLength={3.5}
+        linkDirectionalArrowRelPos={1}
         linkDirectionalParticles={2}
         linkDirectionalParticleSpeed={0.005}
         nodeCanvasObject={(node, ctx, globalScale) => {
