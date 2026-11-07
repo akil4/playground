@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.child {
+    border: 1px solid red;
+    height: 6.25vh;
+    width: 6.25%;
+}
+
+.resetBtn {
+    width: 25%;
+    margin: 1rem 0 0 1rem;
+    padding: 1em;
+}
