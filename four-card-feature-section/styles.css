@@ -1,0 +1,124 @@
+:root {
+    --primary-color-red: hsl(0, 78%, 62%);
+    --primary-color-cyan: hsl(180, 62%, 55%);
+    --primary-color-orange: hsl(34, 97%, 64%);
+    --primary-color-blue: hsl(212, 86%, 64%);
+    --neutral-color-grey500: hsl(234, 12%, 34%);
+    --neutral-color-grey400: hsl(212, 6%, 44%);
+    --neutral-color-white: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins-ExtraLight.ttf") format("truetype"); 
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins-Regular.ttf") format("truetype"); 
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins-SemiBold.ttf") format("truetype"); 
+    font-weight: 600;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.attribution { font-size: 0.6875rem; text-align: center; }
+    
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+    background-color: var(--neutral-color-white);
+    font-family: "Poppins";
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--neutral-color-grey500);
+}
+
+.container {
+    margin: 5rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header__title {
+    padding: 1em;
+}
+
+.header__title--light {
+    font-weight: 200;
+    display: block
+}
+
+.header__para {
+    width: 100%;
+    max-width: 500px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%; 
+    place-content: center;
+    margin-top: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    padding: 3em;
+    box-shadow: 5px 10px 10px rgba(131, 166, 210, 0.3);
+    margin: 2rem;
+}
+
+.card--red {
+    border-top: 5px solid var(--primary-color-red);
+    grid-column-start: 2;
+    grid-row: 1 / span 2;
+}
+
+.card--blue {
+    border-top: 5px solid var(--primary-color-blue);
+    grid-column-start: 3;
+    grid-row: 2 / span 2;
+}
+
+.card--orange {
+    border-top: 5px solid var(--primary-color-orange);
+    grid-column-start: 2;
+    grid-row: 3 / span 2;
+}
+
+.card--cyan {
+    border-top: 5px solid var(--primary-color-cyan);
+    grid-column-start: 1;
+    grid-row: 2 / span 2;
+}
+
+.card__icon {
+    width: 15%;
+    height: auto;
+    margin-top: 2rem;
+    align-self: flex-end;
+}
