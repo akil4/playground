@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'Figtree';
+    src: url(./assets/fonts/static/Figtree-Medium.ttf) format('truetype-variations');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url(./assets/fonts/static/Figtree-ExtraBold.ttf) format('truetype-variations');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url(./assets/fonts/Figtree-VariableFont_wght.ttf) format('truetype-variations');
+    font-weight: 300 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url(./assets/fonts/Figtree-Italic-VariableFont_wght.ttf) format('truetype-variations');
+    font-weight: 300 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --gray-500: hsl(0, 0%, 42%);
+    --gray-950: hsl(0, 0%, 7%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* html {
+    font-size: 16px;
+} */
+
+body {
+    font-family: 'Figtree', sans-serif;
+    color: var(--gray-950);
+    background-color: var(--yellow);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 1.5em;
+    min-width: 300px;
+    max-width: 375px;
+    border: 1px solid var(--gray-500);
+    border-radius: 20px;
+    box-shadow: 7px 7px 0px 0px var(--gray-950);
+}
+
+.card__image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card__type {
+    background-color: var(--yellow);
+    padding: 0.5em 1em;
+    width: fit-content;
+    margin: 1rem 0;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: 0.75rem;
+}
+
+.card__publication {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.card__title {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    /* transition: 0.3s ease; */
+}
+
+.card__title:hover {
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+.card__description {
+    font-weight: 400;
+    color: var(--gray-500);
+    line-height: 1.5;
+    margin: 1rem 0;
+}
+
+.card__author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-block-start: 2rem;
+}
+
+.card__author-image {
+    width: 30px;
+}
+
+.card__author-name {
+    font-weight: 800;
+}
