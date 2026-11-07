@@ -1,0 +1,52 @@
+:root {
+    --body-bg-color: hsl(212, 45%, 89%);
+    --container-bg-color: hsl(0, 0%, 100%);
+    --qr__heading-color: hsl(218, 44%, 22%);
+    --qr__para-color: hsl(216, 15%, 48%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 93.75%; /* This sets the base font-size to 15px */
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--body-bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--container-bg-color);
+    max-width: 315px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 1em;
+}
+
+.qr__image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.qr__heading {
+    color: var(--qr__heading-color);
+    padding: 1em 0em;
+    font-size: 1.5rem;
+}
+
+.qr__para {
+    color: var(--qr__para-color);
+    padding: 0em 1em;
+    margin-block-end: 2rem;
+}
