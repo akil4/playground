@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>handSketch - Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <!-- Background layer for webcam -->
+    <video id="webcam" autoplay playsinline></video>
+    
+    <!-- Canvas for rendering landmarks and previews -->
+    <canvas id="tracking-canvas"></canvas>
+    
+    <!-- Canvas for the persistent drawing -->
+    <canvas id="drawing-canvas"></canvas>
+    
+    <!-- UI Overlay -->
+    <div id="ui-container">
+      <div class="glass-panel header">
+        <h1>handSketch</h1>
+        <div class="status-indicator">
+          <span id="gesture-status">GESTURE: UNKNOWN</span>
+        </div>
+      </div>
+
+      <div class="glass-panel toolbar">
+        <div class="tool-group">
+          <h3>Tools</h3>
+          <button class="tool-btn active" data-tool="pen" id="btn-pen">Pen</button>
+          <button class="tool-btn" data-tool="eraser" id="btn-eraser">Eraser</button>
+          <button class="tool-btn" data-tool="line" id="btn-line">Line</button>
+          <button class="tool-btn" data-tool="rect" id="btn-rect">Rectangle</button>
+          <button class="tool-btn" data-tool="circle" id="btn-circle">Circle</button>
+        </div>
+
+        <div class="tool-group">
+          <h3>Colors</h3>
+          <div class="color-palette">
+            <button class="color-btn active" data-color="#ff0055" style="background-color: #ff0055;"></button>
+            <button class="color-btn" data-color="#00ffcc" style="background-color: #00ffcc;"></button>
+            <button class="color-btn" data-color="#ffff00" style="background-color: #ffff00;"></button>
+            <button class="color-btn" data-color="#ffffff" style="background-color: #ffffff;"></button>
+          </div>
+        </div>
+
+        <div class="tool-group">
+          <h3>Actions</h3>
+          <button class="action-btn clear" id="btn-clear">Clear</button>
+          <button class="action-btn save" id="btn-save">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden element to display hover progress -->
+    <div id="hover-progress"></div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
