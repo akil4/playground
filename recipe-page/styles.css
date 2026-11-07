@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Young-Serif';
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Stone-100: hsl(30, 54%, 90%);
+    --Stone-150: hsl(30, 18%, 87%);
+    --Stone-600: hsl(30, 10%, 34%);
+    --Stone-900: hsl(24, 5%, 18%);
+    --Brown-800: hsl(14, 45%, 36%);
+    --Rose-800: hsl(332, 51%, 32%);
+    --Rose-50: hsl(330, 100%, 98%);
+    --Default-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: var(--Default-size);
+    width: 100%;
+    background-color: var(--Stone-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--Stone-600);
+}
+
+.recipe {
+    min-width: 300px;
+    max-width: 800px;
+    background-color: var(--White);
+    padding: 2em;
+    border-radius: 15px;
+}
+
+.recipe__image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.recipe__title {
+    color: var(--Stone-900);
+    margin: 1.5rem 0 1rem 0;
+}
+
+.recipe__title,
+.h2 {
+    font-family: 'Young-Serif', sans-serif;
+}
+
+.recipe__preparation {
+    background-color: var(--Rose-50);
+    margin: 2rem 0;
+    padding: 1.5em;
+    border-radius: 10px;
+}
+
+.recipe__preparation-title {
+    color: var(--Rose-800);
+}
+
+/* .recipe__preparation ul,
+.content ul,
+.content ol,
+.recipe__preparation li,
+.content li, */
+ul,
+ol,
+li {
+    padding: 0.25em 1.25em;
+}
+
+.recipe__nutrition-description {
+    padding: 0.25em 0;
+}
+
+.h2 {
+    color: var(--Brown-800);
+    margin: 1.5rem 0 0.5rem 0 ;
+}
+
+.divider {
+    margin: 1rem 0;
+    border-bottom: 1.5px solid var(--Stone-100);
+}
+
+.bold,
+li::marker,
+td {
+    font-weight: bold;
+}
+
+li::marker,
+td {
+    color: var(--Brown-800);
+}
+
+th {
+    font-weight: normal;
+}
+
+.table {
+    text-align: left;
+    margin: 0.7rem 1rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 1em;
+}
+
+tr {
+    border-bottom: 1px solid var(--Stone-150);
+    width: 100%;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
