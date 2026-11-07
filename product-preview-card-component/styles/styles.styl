@@ -1,0 +1,113 @@
+@font-face
+    font-family 'Montserrat'
+    src url('../design/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype-variations')
+    font-weight 500 700
+    font-style normal
+    font-display swap
+
+@font-face
+    font-family: 'Fraunces'
+    src url('../design/fonts/Fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype-variations')
+    font-weight 700
+    font-style normal
+    font-display swap
+
+Green-500 = hsl(158, 36%, 37%)
+Green-700 = hsl(158, 42%, 18%)
+Black = hsl(212, 21%, 14%)
+Grey = hsl(228, 12%, 48%)
+Cream = hsl(30, 38%, 92%)
+White = hsl(0, 0%, 100%)
+
+*,
+*::before,
+*::after 
+    box-sizing border-box
+    margin 0
+    padding 0
+
+body
+    font-size 14px
+    background Cream
+    justify-content center
+    min-height 100vh
+
+body,
+.super__price,
+.super__button
+    display flex
+    align-items center
+
+.super
+    background-color White
+    min-width 300px
+    max-width 345px
+    border-radius 10px
+
+.super__image
+    width 100%
+    border-radius 10px 10px 0 0
+
+.super__content
+    padding 2em
+
+.super__category
+    letter-spacing: 4px
+
+.super__category,
+.super__description,
+.super__price-old
+    font-family 'Montserrat', sans-serif
+    color Grey
+    font-weight 500
+
+.super__title
+    padding 0.75em 0
+    color Black
+    line-height 1
+
+.super__title,
+.super__price-new
+    font-family 'Fraunces', sans-serif
+    font-weight 700
+    font-size 2rem
+
+.super__description
+    line-height 1.5
+
+.super__price
+    padding 1.5em 0
+    gap 15px
+
+.super__price-new
+    color Green-500
+
+.super__price-old
+    text-decoration line-through
+
+.super__button
+    font-family 'Montserrat', sans-serif
+    background Green-500
+    padding 1em
+    border-radius 7px
+    color White
+    justify-content center
+    gap 10px
+    font-weight 700
+    cursor pointer
+    transition 0.3s ease
+
+.super__button:hover
+    background Green-700
+
+@media (min-width 768px)
+    .super
+        display flex
+        max-width 700px
+
+    .super__image
+        width 50%
+        border-radius 10px 0 0 10px
+
+    .super__content
+        width 50%
