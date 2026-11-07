@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-VariableFont_slnt\,wght.ttf') format('truetype-variations');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/static/Inter-Bold.ttf') format('truetype-variations');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/static/Inter-Regular.ttf') format('truetype-variations');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/static/Inter-SemiBold.ttf') format('truetype-variations');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --Green: hsl(75, 94%, 57%);
+    --White: hsl(0, 0%, 100%);
+    --Grey-700: hsl(0, 0%, 20%);
+    --Grey-800: hsl(0, 0%, 12%);
+    --Grey-900: hsl(0, 0%, 8%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--Grey-900);
+}
+
+.super {
+    background-color: var(--Grey-800);
+    padding: 2em;
+    border-radius: 10px;
+    width: 100%;
+    min-width: 300px;
+    max-width: 375px;
+    text-align: center;
+}
+
+.super__image {
+    width: 100px;
+    border-radius: 100px;
+    margin-block-start: 1rem;
+}
+
+.super__author {
+    margin: 1.5rem 0;
+    line-height: 1.6;
+    font-size: 0.75rem;    
+}
+
+.super__location {
+    color: var(--Green);
+    font-size: 0.87rem;
+    font-weight: 700;
+}
+
+.super__description {
+    margin: 1.5rem 0;
+    font-weight: 600;
+}
+
+.super__link {
+    background-color: var(--Grey-700);
+    margin: 1rem 0.7rem;
+    padding: 1em;
+    border-radius: 7px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.super__link:hover,
+.super__link:focus-visible {
+    background-color: var(--Green);
+    color: #000;
+    cursor: pointer;
+    outline: none;
+}
